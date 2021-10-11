@@ -11,5 +11,8 @@ class ArticlesController < ApplicationController
     ArticleSerializer
   end
 
-  def show; end
+  def show
+    article = Article.find(params[:id])
+    render json: serializer.new(article)
+  end
 end
