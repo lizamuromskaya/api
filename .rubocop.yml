@@ -1,0 +1,48 @@
+# ./.rubocop.yml
+require: rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - tmp/**/*
+    - log/**/*
+    - bin/*
+    - db/schema.rb
+    - node_modules/**/*
+    - vendor/bundle/**/*
+  NewCops: enable
+  SuggestExtensions: false
+
+Layout/LineLength:
+  Max: 125
+  Exclude:
+    - ./db/seeds.rb
+    - ./config/initializers/*.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - ./spec/**/*_spec.rb
+    - ./lib/tasks/*.rake
+    - config/**/*.rb
+
+Metrics/MethodLength:
+  Exclude:
+    - ./db/migrate/*.rb
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - ./spec/**/*_spec.rb
+
+Style/Documentation:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Exclude:
+    - ./db/seeds.rb
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 20
+  
